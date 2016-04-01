@@ -89,12 +89,12 @@ switch ($report) {
         break;
 
     case 'userfiles':
-        echo '<h2>User\'s Files</h2>';
+        echo '<h2>User\'s Files (Largest First)</h2>';
         $userid = required_param('userid', PARAM_INT);
         $files = $DB->get_records_sql('
             SELECT f.*, u.username FROM {files} f
-            WHERE f.userid = ?
             LEFT JOIN {user} u on u.id = f.userid
+            WHERE f.userid = ?
             ORDER BY filesize DESC',
             [
                 $userid
