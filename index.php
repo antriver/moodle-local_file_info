@@ -178,7 +178,7 @@ switch ($report) {
                 if ($area->contextid) {
                     $context = context_helper::instance_by_id($area->contextid);
                     if ($context instanceof context) {
-                        $contextname .= '<small>Instancce ID '.$context->instanceid.'</small><br/>'.$context->get_context_name();
+                        $contextname .= '<small>Instance ID '.$context->instanceid.'</small><br/>'.$context->get_context_name();
                         if ($parentcontext = $context->get_parent_context()) {
                             $contextname .= '<br/>'.$parentcontext->get_context_name();
                         }
